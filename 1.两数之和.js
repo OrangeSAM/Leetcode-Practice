@@ -29,5 +29,19 @@ var twoSum = function (nums, target) {
     // 如果你需要中止或跳出循环，forEach() 方法不是应当使用的工具。
     // 因此上述代码没用。
 };
+// 时间复杂度高，空间复杂度较下者低
+
+// const twoSum = (nums, target) => {
+//     const obj = {}
+//     for (let i = 0, len = nums.length; i < len; ++i) {
+//         const data = nums[i]
+//         const res = target - data
+//         if (res in obj) {
+//             return [obj[res], i]
+//         }
+//         obj[data] = i
+//     }
+// }
+// 时间复杂度低，空间复杂度高，因为用了对象存储的原因？
 // @lc code=end
 
