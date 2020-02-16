@@ -10,6 +10,8 @@
  * @param {number} target
  * @return {number[]}
  */
+
+ // 解法一，暴力破解
 var twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
@@ -31,6 +33,7 @@ var twoSum = function (nums, target) {
 };
 // 时间复杂度高，空间复杂度较下者低
 
+// 解法二，使用对象存储
 // const twoSum = (nums, target) => {
 //     const obj = {}
 //     for (let i = 0, len = nums.length; i < len; ++i) {
