@@ -10,36 +10,25 @@
  * @return {boolean}
  */
 var isValid = function(s) {
+    if (s.length === 0) return true
     if(s.length % 2 === 1 || s.length === 1) {
         return false
     }
+    let arr = []
     let map = {
-        ')' : '(',
-        ']' : '[',
-        '}' : '{'
+        '(' : ')',
+        '[' : ']',
+        '{' : '}'
     }
-    if (map[s[1]] === s[0]) {
-        // 紧挨着对称
-        for (let i = 0; i < s.length - 1;) {
-            if (map[s[i + 1]] === s[i] ) {
-                i = i + 2
-            } else {
-                return false
-            }
+    for (let i = 0; i < s.length;) {
+        if (s[i] in map) {
+            arr.push(s[i])
+        } else if (s[i] === map[arr[arr.length - 1]]){
+            arr.pop()
         }
-        return true
-    } else if (s[0] === map[s[s.length - 1]]){
-        // 嵌套堆成
-        for(let i = 0; i < s.length / 2;) {
-            if (s[i] === map[s[s.length - 1 - i]]) {
-                i ++ 
-            } else {
-                return false
-            }
-        }
-        return true
+        i++
     }
-    return false
+    return arr.length > 0 ? false : true
 };
 // @lc code=end
 
