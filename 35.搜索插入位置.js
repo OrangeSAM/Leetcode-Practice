@@ -14,13 +14,10 @@ var searchInsert = function(nums, target) {
     if (nums.indexOf(target) !== -1) {
         return nums.indexOf(target)
     } else {
-        for(let i = nums.length - 1; i >= 0; i--) {
-			if (target > nums[i]) {
-                return i + 1
-            } else if (i === 0 ){
-                return i
-            }
+        for(let i = 0 ; i < nums.length; i++){
+            if(nums[i]>target)return i;
         }
+        return nums.length;
     }
 };
 // @lc code=end
